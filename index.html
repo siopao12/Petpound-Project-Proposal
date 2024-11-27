@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw's Doctor Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid px-3">
+        <!-- Logo and Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="image/logo.png" alt="Logo" width="40" class="me-2">
+            PAW'S DOCTOR
+        </a>
+        <!-- Right Section -->
+        <div class="d-flex align-items-center">
+            <!-- Notification Icon -->
+            <a href="#" class="text-decoration-none">
+                <i class="bi bi-bell notification-icon"></i>
+            </a>
+            <!-- User Dropdown -->
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-decoration-none" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="image/profile.jpg" alt="Profile Picture" class="profile-image me-2">
+                    <span>Gerald Seprado</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end profile-dropdown" aria-labelledby="profileDropdown">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Bootstrap JS Bundle and Icons -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</body>
+</html>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.navbar-brand img {
+    border-radius: 50%;
+}
+
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .navbar-brand {
+    font-weight: bold;
+    color: #2c7a4b;
+}
+
+.navbar .navbar-brand:hover {
+    color: #256c42;
+}
+
+.notification-icon {
+    font-size: 1.5rem;
+    color: #6c757d;
+    margin-right: 20px;
+}
+
+.notification-icon:hover {
+    color: #495057;
+}
+
+.profile-dropdown {
+    font-size: 0.9rem;
+}
+
+.profile-image {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw's Doctor Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid px-3">
+        <!-- Hamburger Menu -->
+        <button class="navbar-toggler" type="button" id="sidebarToggle">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Logo and Brand -->
+        <a class="navbar-brand ms-2" href="#">
+            <img src="image/logo.png" alt="Logo" width="40" class="me-2">
+            PAW'S DOCTOR
+        </a>
+        <!-- Right Section -->
+        <div class="d-flex align-items-center ms-auto">
+            <!-- Notification Icon -->
+            <a href="#" class="text-decoration-none">
+                <i class="bi bi-bell notification-icon"></i>
+            </a>
+            <!-- User Dropdown -->
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-decoration-none" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="image/profile.jpg" alt="Profile Picture" class="profile-image me-2">
+                    <span>Gerald Seprado</span>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end profile-dropdown" aria-labelledby="profileDropdown">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Sidebar -->
+<div id="sidebar" class="sidebar">
+    <div class="sidebar-header text-center">
+        Dashboard
+    </div>
+    <ul class="nav flex-column px-2">
+        <li class="nav-item">
+            <a class="nav-link active" href="#"><i class="bi bi-house-door me-2"></i>Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="bi bi-clipboard-data me-2"></i>Appointments</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="bi bi-journal-text me-2"></i>My Pets</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="bi bi-gear me-2"></i>Settings</a>
+        </li>
+    </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <h4>Welcome back, Gerald</h4>
+    <div class="my-pets-section">
+        <h5>My Pets</h5>
+        <img src="image/pet.jpg" alt="Blacky" class="img-fluid rounded">
+        <p class="mt-2">Blacky</p>
+    </div>
+    <div class="appointments-section">
+        <h5>Upcoming Appointments</h5>
+        <!-- Add a table or appointments here -->
+        <p>No appointments scheduled yet.</p>
+    </div>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Sidebar toggle functionality
+    document.getElementById('sidebarToggle').addEventListener('click', function() {
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar.classList.contains('sidebar-collapsed')) {
+            sidebar.classList.remove('sidebar-collapsed');
+            document.querySelector('.main-content').style.marginLeft = "250px";
+        } else {
+            sidebar.classList.add('sidebar-collapsed');
+            document.querySelector('.main-content').style.marginLeft = "0";
+        }
+    });
+</script>
+</body>
+</html>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #2c7a4b;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand:hover {
+    color: #256c42;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.notification-icon {
+    font-size: 1.5rem;
+    color: #6c757d;
+    margin-right: 20px;
+}
+
+.notification-icon:hover {
+    color: #495057;
+}
+
+.profile-image {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    background-color: #2c7a4b;
+    color: #ffffff;
+    transition: all 0.3s;
+    overflow-y: auto;
+}
+
+.sidebar .nav-link {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #256c42;
+    border-radius: 4px;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+.sidebar-collapsed {
+    width: 0;
+}
+
+.sidebar-header {
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.my-pets-section {
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.appointments-section {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw's Doctor Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light">
+        <div class="container-fluid px-3">
+            <!-- Hamburger Icon -->
+            <button class="navbar-toggler" type="button" id="toggleSidebar">
+                <i class="bi bi-list"></i>
+            </button>
+            <!-- Logo and Brand -->
+            <a class="navbar-brand" href="#">
+                <img src="image/logo.png" alt="Logo" width="40" class="me-2">
+                PAW'S DOCTOR
+            </a>
+            <!-- Right Section -->
+            <div class="d-flex align-items-center ms-auto">
+                <!-- Notification Icon -->
+                <a href="#" class="text-decoration-none">
+                    <i class="bi bi-bell notification-icon"></i>
+                </a>
+                <!-- User Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-decoration-none" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="image/profile.jpg" alt="Profile Picture" class="profile-image me-2">
+                        <span>Gerald Seprado</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end profile-dropdown" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar collapsed">
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="bi bi-house-door"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-calendar-event"></i>
+                    <span>Appointments</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-heart"></i>
+                    <span>Services</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Sidebar Toggle Logic
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+        const toggleSidebarButton = document.getElementById('toggleSidebar');
+
+        toggleSidebarButton.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            sidebar.classList.toggle('expanded');
+            mainContent.classList.toggle('expanded');
+        });
+    </script>
+</body>
+</html>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    flex-shrink: 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #2c7a4b;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler {
+    background-color: transparent; /* Remove background */
+    border: none; /* Remove border */
+    outline: none; /* Remove focus outline */
+    padding: 10px; /* Adjust padding */
+    margin-right: 15px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none; /* Remove focus shadow */
+}
+
+.notification-icon {
+    font-size: 1.5rem;
+    color: #6c757d;
+    margin-right: 20px;
+}
+
+.profile-image {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    width: 250px;
+    height: calc(100vh - 56px); /* Subtract navbar height */
+    transition: width 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar.collapsed {
+    width: 60px; /* Collapsed width */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    text-align: left;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.sidebar a:hover {
+    background-color: #f8f9fa;
+}
+
+.sidebar i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.sidebar.collapsed a span {
+    display: none; /* Hide text when collapsed */
+}
+
+.sidebar.collapsed i {
+    margin-right: 0;
+    text-align: center;
+    width: 100%; /* Center icon in collapsed state */
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw's Doctor Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- FullCalendar CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light">
+        <div class="container-fluid px-3">
+            <button class="navbar-toggler" type="button" id="toggleSidebar">
+                <i class="bi bi-list"></i>
+            </button>
+            <a class="navbar-brand" href="#">
+                <img src="image/logo.png" alt="Logo" width="40" class="me-2">
+                PAW'S DOCTOR
+            </a>
+            <div class="d-flex align-items-center ms-auto">
+                <a href="#" class="text-decoration-none">
+                    <i class="bi bi-bell notification-icon"></i>
+                </a>
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-decoration-none" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="image/profile.jpg" alt="Profile Picture" class="profile-image me-2">
+                        <span>Gerald Seprado</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end profile-dropdown" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar collapsed">
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="bi bi-house-door"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-calendar-event"></i>
+                    <span>Appointments</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-heart"></i>
+                    <span>Services</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="main-content">
+    <div class="container-fluid mt-4">
+        <h2>Welcome back, Gerald!</h2>
+
+        <!-- My Pets Section -->
+        <div class="row my-4">
+            <div class="col-12">
+                <div class="my-pets-section">
+                    <h4 class="section-title">MY PETS</h4>
+                    <div class="pet-carousel d-flex align-items-center">
+                        <button class="carousel-control-prev btn btn-outline-secondary me-2" id="prevPet">
+                            <i class="bi bi-chevron-left"></i>
+                        </button>
+                        <div class="d-flex overflow-auto" id="petsContainer">
+                            <div class="pet-card">
+                                <img src="image/pet.jpg" alt="Blacky">
+                                <p>Blacky</p>
+                            </div>
+                            <div class="pet-card">
+                                <img src="image/pet.jpg" alt="Fluffy">
+                                <p>Fluffy</p>
+                            </div>
+                        </div>
+                        <button class="carousel-control-next btn btn-outline-secondary ms-2" id="nextPet">
+                            <i class="bi bi-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Row -->
+        <div class="row">
+            <!-- Upcoming Appointments -->
+            <div class="col-lg-8 mb-4">
+                <h4 class="section-title">Upcoming Appointments</h4>
+                <div id="calendar" class="calendar"></div>
+            </div>
+
+            <!-- Quick Actions and Side Widgets -->
+            <div class="col-lg-4">
+                <!-- Quick Actions -->
+                <div class="quick-actions mb-4">
+                    <h4 class="section-title">Quick Actions</h4>
+                    <button class="btn btn-success w-100 mb-2">+ Add Pets</button>
+                    <button class="btn btn-primary w-100 mb-2">Appointment</button>
+                    <button class="btn btn-info w-100 mb-2">Find Clinic</button>
+                    <button class="btn btn-warning w-100">Inquiries</button>
+                </div>
+
+                <!-- Recent Invoices -->
+                <div class="recent-invoices mb-4">
+                    <h4 class="section-title">Recent Invoices</h4>
+                    <ul>
+                        <li>Invoice: #00125 - Paid</li>
+                        <li>Invoice: #00241 - Paid</li>
+                        <li>Invoice: #00242 - Paid</li>
+                    </ul>
+                </div>
+
+                <!-- Pet Health Overview -->
+                <div class="pet-health-overview">
+                    <h4 class="section-title">Pet Health Overview</h4>
+                    <ul>
+                        <li>Fluffy: Vaccination due on Dec 25, 2024</li>
+                        <li>Snowball: Vaccination due on Dec 25, 2024</li>
+                        <li>Snowie: Vaccination due on Dec 25, 2024</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FullCalendar JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+    <script>
+        // Sidebar Toggle Logic
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+        const toggleSidebarButton = document.getElementById('toggleSidebar');
+
+        toggleSidebarButton.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            mainContent.classList.toggle('expanded');
+        });
+
+        // FullCalendar Initialization
+        document.addEventListener('DOMContentLoaded', function () {
+            const calendarEl = document.getElementById('calendar');
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                events: [
+                    { title: 'Vaccination - Fluffy', start: '2024-12-25' },
+                    { title: 'Check-up - Snowball', start: '2024-12-10' }
+                ]
+            });
+            calendar.render();
+        });
+    </script>
+</body>
+</html>
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #f8f9fa; /* Overall page background */
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    flex-shrink: 0;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #2c7a4b;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-toggler {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 10px;
+    margin-right: 15px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.notification-icon {
+    font-size: 1.5rem;
+    color: #6c757d;
+    margin-right: 20px;
+}
+
+.profile-image {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    width: 250px;
+    height: calc(100vh - 56px); /* Subtract navbar height */
+    transition: width 0.3s ease;
+    overflow-y: auto;
+}
+
+.sidebar.collapsed {
+    width: 60px; /* Collapsed width */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    text-align: left;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.sidebar a:hover {
+    background-color: #f8f9fa;
+}
+
+.sidebar i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.sidebar.collapsed a span {
+    display: none; /* Hide text when collapsed */
+}
+
+.sidebar.collapsed i {
+    margin-right: 0;
+    text-align: center;
+    width: 100%; /* Center icon in collapsed state */
+}
+
+/* Main Content Layout */
+.main-content {
+    margin-left: 250px; /* Space for expanded sidebar */
+    transition: margin-left 0.3s ease;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+}
+
+.main-content.expanded {
+    margin-left: 60px; /* Space for collapsed sidebar */
+}
+
+/* Section Title */
+.section-title {
+    font-size: 1.5rem;
+    color: #2c7a4b;
+    margin-bottom: 15px;
+}
+
+/* My Pets Section */
+.my-pets-section {
+    background-color: #e9f7ef;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pet-carousel {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.pet-card {
+    flex: 0 0 150px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.pet-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 5px;
+}
+
+/* Quick Actions */
+.quick-actions {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.quick-actions button {
+    margin-bottom: 10px;
+}
+
+/* Recent Invoices and Pet Health Overview */
+.recent-invoices, .pet-health-overview {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.recent-invoices ul, .pet-health-overview ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recent-invoices li, .pet-health-overview li {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Calendar Section */
+#calendar {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.fc-toolbar {
+    margin-bottom: 10px;
+}
+
+.fc-daygrid-event {
+    background-color: #2c7a4b !important;
+    color: #fff !important;
+    border: none;
+    border-radius: 5px;
+    padding: 2px 5px;
+    font-size: 0.85rem;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paw's Doctor Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-light">
+        <div class="container-fluid px-3">
+            <!-- Hamburger Icon -->
+            <button class="navbar-toggler" type="button" id="toggleSidebar">
+                <i class="bi bi-list"></i>
+            </button>
+            <!-- Logo and Brand -->
+            <a class="navbar-brand" href="#">
+                <img src="image/logo.png" alt="Logo" width="40" class="me-2">
+                PAW'S DOCTOR
+            </a>
+            <!-- Right Section -->
+            <div class="d-flex align-items-center ms-auto">
+                <!-- Notification Icon -->
+                <a href="#" class="text-decoration-none">
+                    <i class="bi bi-bell notification-icon"></i>
+                </a>
+                <!-- User Dropdown -->
+                <div class="dropdown">
+                    <a href="#" class="d-flex align-items-center text-decoration-none" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="image/profile.jpg" alt="Profile Picture" class="profile-image me-2">
+                        <span>Gerald Seprado</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end profile-dropdown" aria-labelledby="profileDropdown">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar collapsed">
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="bi bi-house-door"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-calendar-event"></i>
+                    <span>Appointments</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-heart"></i>
+                    <span>Services</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="bi bi-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div id="mainContent" class="main-content">
+        <div class="container-fluid">
+            <h1>Welcome to Paw's Doctor Dashboard</h1>
+            <p>Manage your appointments, services, and more from here.</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Sidebar Toggle Logic
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('mainContent');
+        const toggleSidebarButton = document.getElementById('toggleSidebar');
+
+        toggleSidebarButton.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+            sidebar.classList.toggle('expanded');
+        });
+    </script>
+</body>
+</html>
+/* General Styles */
+body {
+    display: flex;
+    flex-direction: row; /* Arrange sidebar and content horizontally */
+    height: 100vh; /* Full viewport height */
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    flex-shrink: 0;
+    position: fixed; /* Fix navbar at the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px; /* Default Bootstrap navbar height */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #2c7a4b;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-toggler {
+    border: none;
+    background-color: transparent; /* Remove background */
+    outline: none; /* Remove focus outline */
+    padding: 15px;
+    margin-right: 15px;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.notification-icon {
+    font-size: 1.5rem;
+    color: #6c757d;
+    margin-right: 20px;
+}
+
+.profile-image {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    width: 250px;
+    height: 100vh; /* Full height */
+    transition: width 0.3s ease;
+    overflow-y: auto;
+    padding-top: 65px; /* Account for fixed navbar height */
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar.collapsed {
+    width: 60px; /* Collapsed width */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    text-align: left;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.sidebar a:hover {
+    background-color: #f8f9fa;
+}
+
+.sidebar i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.sidebar.collapsed a span {
+    display: none; /* Hide text when collapsed */
+}
+
+.sidebar.collapsed i {
+    margin-right: 0;
+    text-align: center;
+    width: 100%; /* Center icon in collapsed state */
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1; /* Take up remaining space */
+    margin-left: 250px; /* Default margin for expanded sidebar */
+    padding: 20px;
+    padding-top: 76px; /* Account for navbar height */
+    overflow-y: auto;
+    background-color: #f9f9f9;
+    transition: margin-left 0.3s ease;
+}
+
+.sidebar.collapsed ~ .main-content {
+    margin-left: 60px; /* Adjust for collapsed sidebar */
+}
+
+
